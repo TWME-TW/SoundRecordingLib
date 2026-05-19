@@ -2,17 +2,17 @@ package dev.twme.soundRecordingLib.data;
 
 public enum RecordingMode {
     /**
-     * 固定參考點模式。
-     * 錄製開始時設定一個固定的世界座標作為參考點（referencePosition）。
-     * 每個聲音事件儲存其相對於 referencePosition 的偏移向量。
-     * 適合：紅石音樂、建築內固定音效等位置固定的場景。
+     * Fixed reference point mode.
+     * A fixed world coordinate is set as the reference point (referencePosition) when recording starts.
+     * Each sound event stores its offset vector relative to the referencePosition.
+     * Suitable for: redstone music, fixed-position sounds in buildings, and other location-fixed scenarios.
      */
     STATIC,
 
     /**
-     * 跟隨玩家模式（第一人稱體驗）。
-     * 每個聲音事件儲存其相對於「錄製者在該 tick 的瞬時位置」的偏移向量。
-     * 適合：記錄玩家在世界中行走時聽到的完整聲音體驗。
+     * Player-following mode (first-person experience).
+     * Each sound event stores its offset vector relative to the recorder's instantaneous position at that tick.
+     * Suitable for: capturing the full sound experience a player hears while walking through the world.
      */
     PLAYER_RELATIVE
 }
