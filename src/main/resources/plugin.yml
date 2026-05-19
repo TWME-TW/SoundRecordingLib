@@ -1,0 +1,8 @@
+name: SoundRecordingLib
+version: '${version}'
+
+main: dev.twme.soundRecordingLib.SoundRecordingLib
+api-version: '1.21.11'
+load: POSTWORLD
+
+authors: [ TWME-TW ]
