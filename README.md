@@ -4,6 +4,8 @@ A **PaperMC plugin library** that intercepts Minecraft sound packets at the Nett
 
 > **⚠ This is a library plugin.** It provides a public API (`SoundRecordingApi`) for other plugins (e.g. [SoundRecord](https://github.com/TWME-TW/SoundRecord)) to start/stop recordings and playback sessions. It has no commands on its own.
 
+> **Note:** This plugin requires the latest PacketEvents development build.
+
 ---
 
 ## Features
