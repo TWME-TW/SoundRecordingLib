@@ -232,18 +232,14 @@ public class PlaybackManager {
         PacketEvents.getAPI().getPlayerManager().sendPacket(target, packet);
     }
 
-    // Rotate a 2D vector (x, z) by angleDegrees around the Y axis.
-    // Minecraft yaw: 0° = south (+Z), 90° = west (-X), -90° = east (+X)
-    // We treat yaw as standard compass bearing: rotate by -yaw in standard math convention.
+    // Rotate a 2D vector (x, z) by Minecraft yaw degrees around the Y axis.
+    // Positive yaw rotates the vector from south (+Z) toward west (-X).
     private double[] rotate2D(double x, double z, float yawDegrees) {
         double rad = Math.toRadians(yawDegrees);
         double cos = Math.cos(rad);
         double sin = Math.sin(rad);
-        // Minecraft yaw: positive yaw = clockwise when viewed from above
-        // Standard 2D rotation (counter-clockwise): x' = x*cos - z*sin, z' = x*sin + z*cos
-        // For Minecraft yaw (clockwise): negate the angle
-        double newX = x * cos + z * sin;
-        double newZ = -x * sin + z * cos;
+        double newX = x * cos - z * sin;
+        double newZ = x * sin + z * cos;
         return new double[]{newX, newZ};
     }
 }
